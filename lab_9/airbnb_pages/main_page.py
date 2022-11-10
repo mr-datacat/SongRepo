@@ -16,6 +16,6 @@ class MainPage:
         sleep(7)
 
     def open_first_residence(self) -> ResidencePage:
-        WebDriverWait(self.driver, 15) \
+        WebDriverWait(self.driver, 30) \
             .until(EC.presence_of_element_located(self.first_residence_locator)).click()
         return ResidencePage(self.driver)

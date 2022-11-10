@@ -14,6 +14,6 @@ class ResidencePage:
 
     def open_booking_page(self):
         print(self.driver.title)
-        WebDriverWait(self.driver, 15) \
+        WebDriverWait(self.driver, 30) \
             .until(EC.presence_of_element_located(self.booking_button_locator)).click()
         return BookingPage(self.driver)
