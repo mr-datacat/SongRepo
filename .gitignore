@@ -2,3 +2,5 @@
 *.log
 target/
 bin/
+**/.pytest_cache
+**/__pycache__
