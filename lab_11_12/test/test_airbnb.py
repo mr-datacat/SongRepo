@@ -39,7 +39,7 @@ class TestAirbnb(TestCase):
         page = MainPage(self.driver)
         page.open(self.test_data['link'])
         start_price = page.get_first_residence_price()
-        sleep(2)
+        sleep(3)
         page.set_currency_PLN()
         final_price = page.get_first_residence_price()
         self.assertTrue(start_price != final_price)
@@ -87,7 +87,7 @@ class TestAirbnb(TestCase):
         page = ResidencePage(self.driver)
         page.open(self.test_data['link'])
         page.close_auto_translation_popup()
-        sleep(2)
+        sleep(3)
         page.set_region_сzech()
         header = page.get_header()
         self.assertTrue(is_czech(header))
@@ -122,7 +122,7 @@ class TestAirbnb(TestCase):
         main_page.click_first_map_residence()
         first_map_residence_link = main_page.get_first_map_residence_link().partition('?')[0]
         main_page.open_first_map_residence_page()
-        sleep(2)
+        sleep(3)
         self.driver.switch_to.window(self.driver.window_handles[1])
         current_url_value = str(self.driver.current_url).partition('?')[0]
         self.assertTrue(first_map_residence_link == current_url_value)

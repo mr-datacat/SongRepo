@@ -48,7 +48,7 @@ class ResidencePage(PageFactory):
     def open_booking_page(self) -> BookingPage:
         PAGE_LOGGER.info('Open booking page')
         print(self.driver.title)
-        WebDriverWait(self.driver, 30) \
+        WebDriverWait(self.driver, 40) \
             .until(EC.presence_of_element_located(self.booking_button_locator)) \
             .click()
         return BookingPage(self.driver)
@@ -57,7 +57,7 @@ class ResidencePage(PageFactory):
     def switch_auto_translation(self):
         PAGE_LOGGER.info("Switch automatic translation")
         self.region_settings.click()
-        WebDriverWait(self.driver, 30) \
+        WebDriverWait(self.driver, 40) \
             .until(EC.element_to_be_clickable(self.auto_translation_locators['auto_translation'])) \
             .click()
         sleep(4)
@@ -65,7 +65,7 @@ class ResidencePage(PageFactory):
 
     def close_auto_translation_popup(self):
         PAGE_LOGGER.debug('Close automatic translation popup')
-        WebDriverWait(self.driver, 30) \
+        WebDriverWait(self.driver, 40) \
             .until(EC.presence_of_element_located(self.auto_translation_locators['close_popup_button'])) \
             .click()
     
@@ -73,7 +73,7 @@ class ResidencePage(PageFactory):
     def set_region_сzech(self):
         PAGE_LOGGER.info("Set region 'Czech'")
         self.region_settings.click()
-        WebDriverWait(self.driver, 30) \
+        WebDriverWait(self.driver, 40) \
             .until(EC.element_to_be_clickable(self.сzech_region_locator)) \
             .click()
-        sleep(3)
+        sleep(4)
