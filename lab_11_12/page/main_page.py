@@ -52,7 +52,10 @@ class MainPage(PageFactory):
     
     def open(self, link: str=None):
         self.open_without_popup_check(link)
-        self.close_popup()
+        try:
+            self.close_popup()
+        except:
+            PAGE_LOGGER.warning('Popup closing error')
         sleep(2)
     
 
